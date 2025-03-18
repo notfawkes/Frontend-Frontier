@@ -5,33 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C++ Website</title>
     <script type="module" crossorigin src="https://unpkg.com/@splinetool/viewer"></script>
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: black; /* Dark background for contrast */
-        }
-        spline-viewer {
-            position: absolute;
-            right: 0px;
-            width: 50vw;
-            height: 90vh;
-        }
-        header-text{
-            
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 4rem;
-            color: white;
-            position: absolute;
-            left: 0px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="header-text">Lets get started</h1>
-    <spline-viewer url="https://prod.spline.design/X36fnKbK-oeVFavE/scene.splinecode"></spline-viewer>
+    <div class="navbar">
+        <h2>C++ : Homepage</h2>
+        <div class="nav-links">
+            <a href="#">Structure of a Program</a>
+            <a href="#">References</a>
+            <a href="#">Articles</a>
+            <a href="#">Forum</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-section">
+            <h1 class="header-text">Let's get started</h1>
+            <h2 class="subheading">Code. Build. Innovate.</h2>
+            <button class="btn">Get Started</button>
+        </div>
+        <spline-viewer url="https://prod.spline.design/X36fnKbK-oeVFavE/scene.splinecode"></spline-viewer>
+    </div>
 </body>
 </html>
