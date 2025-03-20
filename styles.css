@@ -89,19 +89,6 @@ body {
     animation: typing 4s steps(40, end) forwards, blink 0.8s infinite;
 }
 
-.header-text-1{
-    margin-top: 80px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 4rem;
-    color: white;
-    white-space: nowrap;
-    border-right: 4px solid #c580ff;
-    overflow: hidden;
-    display: inline-block;
-    width: 0;
-    animation: typing 4s steps(40, end) forwards, blink 0.8s infinite;
-}
-
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
@@ -1006,4 +993,172 @@ z-index: 1;
 .banner .content h1{
     font-size: 5em;
 }
+}
+/*======Forums=======*/
+/*body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+*/
+
+.header-text-1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    color: white;
+    white-space: nowrap;
+    border-right: 4px solid #c580ff;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 25ch;
+    animation: typing1 4s steps(25, end) forwards, blink1 0.8s infinite;
+    
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes typing1 {
+    from { max-width: 0; }
+    to { max-width: 25ch; }
+}
+
+@keyframes blink1 {
+    50% { border-color: transparent; }
+}
+
+/* Forum Styling */
+.forum-container {
+    width: 80%;
+    max-width: 700px;
+    background: #222244;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    overflow-y: auto;
+    max-height: 500px;
+    margin: auto; /* Center the forum */
+    margin-top: 200px; /* Ensures it appears below the header */
+}
+
+/* Chat Box Styling */
+.chat-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.5s forwards;
+}
+
+.chat-box:nth-child(even) {
+    justify-content: flex-start;
+}
+
+.chat-box:nth-child(odd) {
+    justify-content: flex-end;
+}
+
+.chat-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(157, 95, 251, 0.8);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat Logo */
+.chat-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #6a0dad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+    animation: bounceIn 0.5s;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Chat Messages */
+.chat-message {
+    background: #6a0dad;
+    padding: 12px 18px;
+    border-radius: 15px;
+    max-width: 65%;
+    word-wrap: break-word;
+    transition: background 0.3s;
+}
+
+.chat-box:nth-child(odd) .chat-message {
+    background: #9d5ffb;
+}
+
+.chat-box:nth-child(odd) .chat-logo {
+    margin-left: 10px;
+}
+
+.chat-box:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 700px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #333366;
+    color: white;
+}
+
+.chat-input button {
+    background: #6a0dad;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.chat-input button:hover {
+    background: #9d5ffb;
 }

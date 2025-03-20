@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h2>Article Page</h2>
+        <div class="nav-links">
+            <a href="LandingPage.html">Home</a>
+            <a href="#">References</a>
+            <a href="Structure.html">Structure of a programme</a>
+            <a href="Articles.html">Articles</a>
+            </div>
+            </nav>
+            <h2 class="header-text-1">Discuss with other experts</h2>
+            <div class="forum-container" id="chatContainer">
+                <div class="chat-box">
+                    <div class="chat-logo">C</div>
+                    <div class="chat-message">
+                        <p>How do I optimize my C++ code for performance?</p>
+                    </div>
+                </div>
+        
+                <div class="chat-box">
+                    <div class="chat-logo">J</div>
+                    <div class="chat-message">
+                        <p>Try using smart pointers and avoid unnecessary copies.</p>
+                    </div>
+                </div>
+        
+                <div class="chat-box">
+                    <div class="chat-logo">A</div>
+                    <div class="chat-message">
+                        <p>What’s the best way to learn STL?</p>
+                    </div>
+                </div>
+        
+                <div class="chat-box">
+                    <div class="chat-logo">T</div>
+                    <div class="chat-message">
+                        <p>Practice with Leetcode and implement real-world problems.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+            <footer class="footer">
+                <h3>C++</h3>
+                <div class="footer-links">
+                    <a href="#">Structure of a Program</a>
+                    <a href="#">References</a>
+                    <a href="#">Articles</a>
+                    <a href="#">Forum</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>&copy; 2025 Your Brand. All rights reserved.</p>
+            </footer>  
+            <script>
+                function sendMessage() {
+    let input = document.getElementById("messageInput");
+    let messageText = input.value.trim();
+    if (messageText === "") return;
+
+    let chatContainer = document.getElementById("chatContainer");
+    let chatBox = document.createElement("div");
+    chatBox.classList.add("chat-box");
+
+    // Alternating Left & Right Messages
+    let isEven = chatContainer.children.length % 2 === 0;
+    if (!isEven) {
+        chatBox.classList.add("reverse");
+    }
+
+    // Create Logo
+    let logo = document.createElement("div");
+    logo.classList.add("chat-logo");
+    logo.textContent = "U"; // Default username first letter
+
+    // Create Message
+    let messageDiv = document.createElement("div");
+    messageDiv.classList.add("chat-message");
+    messageDiv.innerHTML = `<p>${messageText}</p>`;
+
+    // Append elements
+    chatBox.appendChild(logo);
+    chatBox.appendChild(messageDiv);
+    chatContainer.appendChild(chatBox);
+
+    // Scroll to bottom
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    // Clear input field
+    input.value = "";
+}
+
+            </script> 
+</body>
+</html>
