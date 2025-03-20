@@ -14,13 +14,11 @@
         <div class="nav-links">
             <a href="LandingPage.html">Home</a>
             <a href="#">References</a>
-            <a href="#">Articles</a>
+            <a href="Articles.html">Articles</a>
             <a href="#">Forum</a>
         </div>
     </nav>
-
     <main>
-        <!-- Section 1: Proverb and Image -->
         <section class="proverb-section">
             <div class="proverb-container">
                 <h1>"C++ is the language of passion, precision, and power."</h1>
@@ -29,7 +27,6 @@
                 <img src="images/3d-rendering-desk-computer-illustration.jpg" alt="C++ Image">
             </div>
         </section>
-
         <div class="space-container">
             <h2>How a Program Works</h2>
             <div class="stars"></div>
@@ -64,8 +61,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Section 3: Code Box -->
         <section class="code-section">
             <div class="code-container">
                 <pre><code class="monospace">
@@ -102,16 +97,12 @@ int main() {
     </main>
 
     <script>
-        // Parallax Effect
-// Parallax Effect for Depth
 document.addEventListener("mousemove", (e) => {
     const moveX = (e.clientX / window.innerWidth) * 30 - 15;
     const moveY = (e.clientY / window.innerHeight) * 30 - 15;
 
     document.querySelector(".stars").style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
-
-// Floating Planets
 const planets = document.querySelectorAll(".planet");
 planets.forEach((planet, index) => {
     setTimeout(() => {
@@ -172,10 +163,24 @@ function typeCode() {
         setTimeout(typeCode, 50);
     }
 }
-
-// Clear the initial content and start typing
 codeElement.textContent = '';
 typeCode();
     </script>
+    <footer class="footer">
+        <h3>C++</h3>
+        <div class="footer-links">
+            <a href="#">Structure of a Program</a>
+            <a href="#">References</a>
+            <a href="#">Articles</a>
+            <a href="#">Forum</a>
+        </div>
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2025 Your Brand. All rights reserved.</p>
+    </footer>  
 </body>
 </html>
