@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure of a C++ Program</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body style="background-color: black; color: #c792ea;">
+    <nav class="navbar">
+        <h2>Structure of a C++ Program</h2>
+        <div class="nav-links">
+            <a href="LandingPage.html">Home</a>
+            <a href="#">References</a>
+            <a href="#">Articles</a>
+            <a href="#">Forum</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Section 1: Proverb and Image -->
+        <section class="proverb-section">
+            <div class="proverb-container">
+                <h1>"C++ is the language of passion, precision, and power."</h1>
+            </div>
+            <div class="image-container">
+                <img src="images/3d-rendering-desk-computer-illustration.jpg" alt="C++ Image">
+            </div>
+        </section>
+
+        <div class="space-container">
+            <h2>How a Program Works</h2>
+            <div class="stars"></div>
+            <div class="journey">
+                <div class="step" style="--delay:0s;">
+                    <div class="planet"></div>
+                    <div class="text-box"><p>Start the program</p></div>
+                </div>
+                <div class="step" style="--delay:0.5s;">
+                    <div class="planet"></div>
+                    <div class="text-box"><p>Include Libraries</p></div>
+                </div>
+                <div class="step" style="--delay:1s;">
+                    <div class="planet"></div>
+                    <div class="text-box"><p>Main Function</p></div>
+                </div>
+                <div class="step" style="--delay:1.5s;">
+                    <div class="planet"></div>
+                    <div class="text-box"><p>Variable declaration</p></div>
+                </div>
+                <div class="step" style="--delay:1.5s;">
+                    <div class="planet"></div>
+                    <div class="text-box"><p>Code execution</p></div>
+                </div>
+                <div class="step" style="--delay:1.5s;">
+                    <div class="planet"></div>
+                    <div class="text-box"><p>Return Statement</p></div>
+                </div>
+                <div class="step" style="--delay:2s;">
+                    <div class="planet"></div>
+                    <div class="text-box"><p>End</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Code Box -->
+        <section class="code-section">
+            <div class="code-container">
+                <pre><code class="monospace">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout << "Hello, World!";
+    return 0;
+}
+                </code></pre>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <div class="quiz-container">
+                <h2>Quiz</h2>
+                <div class="quiz-question">
+                    <p>What is the output of the following code?</p>
+                    <pre><code class="monospace">
+int main() {
+    int a = 5;
+    int b = 10;
+    cout << a + b;
+    return 0;
+}
+                    </code></pre>
+                    <button class="btn">15</button>
+                    <button class="btn">20</button>
+                    <button class="btn">25</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Parallax Effect
+// Parallax Effect for Depth
+document.addEventListener("mousemove", (e) => {
+    const moveX = (e.clientX / window.innerWidth) * 30 - 15;
+    const moveY = (e.clientY / window.innerHeight) * 30 - 15;
+
+    document.querySelector(".stars").style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
+
+// Floating Planets
+const planets = document.querySelectorAll(".planet");
+planets.forEach((planet, index) => {
+    setTimeout(() => {
+        planet.style.animation = "float 3s ease-in-out infinite alternate";
+    }, index * 500);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const codeContainer = document.querySelector(".code-container");
+    const codeText = `#include <stdio.h>
+
+int main() {
+    printf("Hello, World!");
+    return 0;
+}`;
+    
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0;
+    }
+
+    function typeCode() {
+        let i = 0;
+        function typingEffect() {
+            if (i < codeText.length) {
+                codeContainer.textContent += codeText.charAt(i);
+                i++;
+                setTimeout(typingEffect, 50);
+            }
+        }
+        typingEffect();
+    }
+
+    function handleScroll() {
+        if (isInViewport(codeContainer) && codeContainer.textContent === "") {
+            typeCode();
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+});
+
+
+const codeElement = document.querySelector('.monospace');
+const code = `#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, World!";
+    return 0;
+}`;
+let index = 0;
+
+function typeCode() {
+    if (index < code.length) {
+        codeElement.textContent += code.charAt(index);
+        index++;
+        setTimeout(typeCode, 50);
+    }
+}
+
+// Clear the initial content and start typing
+codeElement.textContent = '';
+typeCode();
+    </script>
+</body>
+</html>
