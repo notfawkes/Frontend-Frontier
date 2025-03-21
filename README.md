@@ -1,2 +1,2 @@
-# Frontend-Frontier
-A C++ website with a modern UI look
+#C++
+My C++ website is built with a bold purple theme, symbolizing power while also giving off a cool, gaming-inspired vibe. I wanted it to feel immersive, so I incorporated smooth animations using GSAP and CSS, making every interaction feel dynamic and engaging. To take it a step further, I used Spline to design stunning 3D effects, adding depth and a modern touch to the experience. For a clean and professional look, I kept a standard font throughout the site, ensuring uniformity and readability. Every element is carefully designed to create a seamless and visually striking experience, making coding feel more interactive and exciting.
